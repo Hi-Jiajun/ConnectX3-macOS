@@ -1,0 +1,17 @@
+
+===== network interfaces =====
+$ sh -c ip link 2>/dev/null; echo "---"; ls /sys/class/net
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: wlan0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+    link/ether 00:11:22:33:44:57 brd ff:ff:ff:ff:ff:ff
+3: eth0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+    link/ether 00:11:22:33:44:55 brd ff:ff:ff:ff:ff:ff
+4: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+    link/ether 00:11:22:33:44:56 brd ff:ff:ff:ff:ff:ff
+---
+eth0
+eth1
+lo
+wlan0
+(exit status 0)

@@ -1,0 +1,22 @@
+===== side-by-side: 0x8069c (owner) and 0xf03fc (semaphore) =====
+--- driver-loaded ---
+  +0x80698  devmem=FAIL       resource0=FAIL      
+  +0x8069c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0x80698   4 dword(s) ---
+  +0x80698  devmem=FAIL       resource0=FAIL      
+  +0x8069c  devmem=FAIL       resource0=FAIL      
+  +0x806a0  devmem=FAIL       resource0=FAIL      
+--- no-driver ---
+  +0x80698  devmem=FAIL       resource0=FAIL      
+  +0x8069c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0x80698   4 dword(s) ---
+  +0x80698  devmem=FAIL       resource0=FAIL      
+  +0x8069c  devmem=FAIL       resource0=FAIL      
+  +0x806a0  devmem=FAIL       resource0=FAIL      
+--- driver-reloaded ---
+  +0x80698  devmem=FAIL       resource0=FAIL      
+  +0x8069c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0x80698   4 dword(s) ---
+  +0x80698  devmem=FAIL       resource0=FAIL      
+  +0x8069c  devmem=FAIL       resource0=FAIL      
+  +0x806a0  devmem=FAIL       resource0=FAIL      

@@ -1,0 +1,5 @@
+
+===== mstflint --version =====
+$ mstflint --version
+mstflint, mstflint 4.35.0, Git SHA Hash: 
+(exit status 0)

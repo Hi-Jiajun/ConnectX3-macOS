@@ -1,0 +1,40 @@
+# ---- build output -------------------------------------------------------
+# Built kexts are never committed.  A .kext is a binary artifact, and this
+# repository is about the source that produces it.
+build/
+outputs/
+*.kext
+*.o
+*.o.err
+*.dSYM/
+cx3ctl
+
+# ---- third-party proprietary binaries -----------------------------------
+# NEVER commit these, not even while the repository is private.
+#
+# Git history is permanent: once such an object exists in a commit it stays
+# reachable from that commit even after the file is deleted, so turning the
+# repository public later would republish it.  Removing it then requires a
+# history rewrite (filter-repo / BFG), which changes every commit hash.
+# Keeping them out from the first commit costs nothing.
+#
+# The ATTO FastFrame kext is Mellanox's own cna2 code shipped under an ATTO
+# badge (see docs/M1-NOTES.md section 9.2); it is proprietary.  The other names
+# below are third-party vendor kexts from this machine's driver backups.
+ATTO*
+atto*
+*.dmg
+*.pkg
+NVRM*
+NVAccel*
+NVRMFB*
+NVRMAGDC*
+HighPoint*
+state-backup-*
+
+# ---- local state --------------------------------------------------------
+.DS_Store
+.DS_Store?
+*.swp
+__pycache__/
+.codegraph/

@@ -1,0 +1,24 @@
+
+===== dmesg for mlx4 / mellanox =====
+$ dmesg 2>/dev/null | grep -iE "mlx4|mellanox|15b3" || echo "(no mlx4/mellanox lines in dmesg)"
+[    0.827010] pci 0000:07:00.0: [15b3:1007] type 00 class 0x020000
+[   14.187870] mlx4_core: Mellanox ConnectX core driver v4.0-0
+[   14.187882] mlx4_core: Initializing 0000:07:00.0
+[   14.187922] mlx4_core 0000:07:00.0: enabling device (0000 -> 0002)
+[   20.651895] mlx4_core 0000:07:00.0: DMFS high rate steer mode is: disabled performance optimized steering
+[   20.652165] mlx4_core 0000:07:00.0: 31.504 Gb/s available PCIe bandwidth, limited by 8.0 GT/s PCIe x4 link at 0000:04:08.0 (capable of 63.008 Gb/s with 8.0 GT/s PCIe x8 link)
+[   21.297079] <mlx4_ib> mlx4_ib_probe: mlx4_ib: Mellanox ConnectX InfiniBand driver v4.0-0
+[   21.297593] <mlx4_ib> mlx4_ib_probe: counter index 2 for port 1 allocated 1
+[   21.297594] <mlx4_ib> mlx4_ib_probe: counter index 3 for port 2 allocated 1
+[   21.366094] mlx4_en: Mellanox ConnectX HCA Ethernet driver v4.0-0
+[   21.366215] mlx4_en 0000:07:00.0: Activating port:1
+[   21.366510] mlx4_en: 0000:07:00.0: Port 1: Using 16 TX rings
+[   21.366512] mlx4_en: 0000:07:00.0: Port 1: Using 16 RX rings
+[   21.366815] mlx4_en: 0000:07:00.0: Port 1: Initializing port
+[   21.367867] mlx4_en 0000:07:00.0: registered PHC clock
+[   21.368585] mlx4_en 0000:07:00.0: Activating port:2
+[   21.368906] mlx4_en: 0000:07:00.0: Port 2: Using 16 TX rings
+[   21.368907] mlx4_en: 0000:07:00.0: Port 2: Using 16 RX rings
+[   21.372671] mlx4_en: 0000:07:00.0: Port 2: Initializing port
+[   24.774991] mlx4_en: eth0: Link Up
+(exit status 0)

@@ -1,0 +1,5 @@
+
+===== dmesg errors and PCI =====
+$ dmesg 2>/dev/null | grep -iE "error|fail|unsupported|skipping|ownership|semaphore|iommu|DMAR|AMD-Vi" | tail -60
+/etc/local.d/zz-cx3diag.start: line 49: dmesg 2>/dev/null | grep -iE "error|fail|unsupported|skipping|ownership|semaphore|iommu|DMAR|AMD-Vi" | tail -60: not found
+(exit status 127)

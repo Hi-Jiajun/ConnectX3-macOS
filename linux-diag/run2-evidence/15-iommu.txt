@@ -1,0 +1,9 @@
+
+===== IOMMU state =====
+$ sh -c cat /proc/cmdline; echo "---"; dmesg | grep -i iommu | head -20; echo "---"; ls /sys/class/iommu 2>/dev/null || echo "(no /sys/class/iommu)"
+BOOT_IMAGE=/boot/vmlinuz-lts modules=loop,squashfs,sd-mod,usb-storage console=tty0 iomem=relaxed
+---
+[    0.847433] iommu: Default domain type: Translated
+[    0.847435] iommu: DMA domain TLB invalidation policy: lazy mode
+---
+(exit status 0)

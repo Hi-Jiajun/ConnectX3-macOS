@@ -1,0 +1,44 @@
+
+===== lsmod before =====
+$ sh -c lsmod 2>/dev/null | head -40 || cat /proc/modules | head -40
+Module                  Size  Used by    Tainted: G  
+af_packet              65536  0 
+wmi_bmof               12288  0 
+snd_usb_audio         434176  0 
+snd_usbmidi_lib        49152  1 snd_usb_audio
+snd_rawmidi            53248  1 snd_usbmidi_lib
+snd_seq_device         16384  1 snd_rawmidi
+mc                     90112  1 snd_usb_audio
+btusb                  81920  0 
+btrtl                  28672  1 btusb
+btbcm                  24576  1 btusb
+btmtk                  12288  1 btusb
+btintel                57344  1 btusb
+bluetooth            1028096  6 btusb,btrtl,btbcm,btmtk,btintel
+mlx4_en               155648  0 
+mlx4_ib               253952  0 
+ib_uverbs             204800  1 mlx4_ib
+ib_core               512000  2 mlx4_ib,ib_uverbs
+ecdh_generic           16384  1 bluetooth
+ecc                    40960  1 ecdh_generic
+crc16                  12288  1 bluetooth
+pcspkr                 12288  0 
+efi_pstore             12288  0 
+mlx4_core             442368  2 mlx4_en,mlx4_ib
+mt7921e                24576  0 
+mt7921_common          86016  1 mt7921e
+mt792x_lib             65536  2 mt7921e,mt7921_common
+mt76_connac_lib        94208  3 mt7921e,mt7921_common,mt792x_lib
+mt76                  131072  4 mt7921e,mt7921_common,mt792x_lib,mt76_connac_lib
+mac80211             1306624  4 mt7921_common,mt792x_lib,mt76_connac_lib,mt76
+libarc4                12288  1 mac80211
+cfg80211             1347584  4 mt7921_common,mt76_connac_lib,mt76,mac80211
+rfkill                 28672  2 bluetooth,cfg80211
+r8169                 118784  0 
+mdio_devres            12288  1 r8169
+libphy                221184  2 r8169,mdio_devres
+nouveau              2965504  0 
+mxm_wmi                12288  1 nouveau
+drm_exec               12288  1 nouveau
+gpu_sched              61440  1 nouveau
+(exit status 0)

@@ -1,0 +1,6 @@
+
+===== mstconfig -d <bdf> q =====
+$ mstconfig -d 0000:07:00.0 q
+FATAL - crspace read (0xf0014) failed: Invalid argument
+-E- Failed to identify the device
+(exit status 3)

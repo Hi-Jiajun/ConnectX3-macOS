@@ -1,0 +1,10 @@
+
+===== kernel view of the BAR ranges =====
+$ grep -A1 -iE "0000:07:00" /proc/iomem || echo "(no 07:00 entries in /proc/iomem)"
+        dc200000-dc2fffff : 0000:07:00.0
+        dc300000-dc3fffff : 0000:07:00.0
+          dc300000-dc3fffff : mlx4_core
+--
+        fc02800000-fc02ffffff : 0000:07:00.0
+          fc02800000-fc02ffffff : mlx4_core
+(exit status 0)

@@ -1,0 +1,71 @@
+===== BAR0 readback, no driver bound =====
+date:      Sat Oct 10 14:54:26 UTC 2026
+BDF:       0000:07:00.0
+BAR0 base: 0x00000000dc300000
+driver:    none
+method:    devmem2 (mmap of /dev/mem, iomem=relaxed)
+
+macOS, in the same unclaimed state, reports for these offsets:
+    0x8069c = 0x01000000   (the ownership word across 10 boots)
+    0xf03fc = 0x01000000   (the reset semaphore)
+    0x80698 = 0x63144526   (HCR status, raw)
+    0x6e000 and 0x77000    whole pages of 0x01000000
+
+Each of the three key registers is read three times in a row, because
+macOS shows a first-read-zero artifact at these addresses.
+
+--- 0x8069c ownership word, three consecutive reads ---
+  read 1: 0x00000000
+  read 2: 0x01000000
+  read 3: 0x01000000
+
+--- 0xf03fc reset semaphore, three consecutive reads ---
+  read 1: 0x00000000
+  read 2: 0x01000000
+  read 3: 0x01000000
+
+--- 0x80698 HCR status, three consecutive reads ---
+  read 1: 0x63144526
+  read 2: 0x63144526
+  read 3: 0x63144526
+
+--- the HCR block, one read each (no driver, so nothing is in flight) ---
+  +0x80680  0x0043202C
+  +0x80684  0x0C024092
+  +0x80688  0x00122414
+  +0x8068c  0x0A408010
+  +0x80690  0x04046103
+  +0x80694  0x81001090
+  +0x806a0  0x00000000
+
+--- the reset block ---
+  +0xf0000  0x0B000008
+  +0xf0004  0x10000000
+  +0xf0008  0x00010000
+  +0xf000c  0x00000000
+  +0xf0010  0x00000000
+  +0xf0014  0xF7010000
+  +0xf0018  0x03000073
+  +0xf001c  0x1FEF4FFF
+  +0xf03f0  0x01000000
+  +0xf03f4  0x00000000
+  +0xf03f8  0x00000000
+
+--- whole pages that read 0x01000000 on macOS ---
+  +0x6e000  0x01000000
+  +0x6e004  0x01000000
+  +0x6e008  0x01000000
+  +0x6e00c  0x01000000
+  +0x77000  0x01000000
+  +0x77004  0x01000000
+  +0x77008  0x01000000
+  +0x7700c  0x01000000
+
+--- other macOS readings, for reference ---
+  +0x0  0x00000000
+  +0x1000  0x00000000
+  +0x40000  0xFFFFFFFF
+  +0x40004  0xFFFFFFFF
+  +0x59000  0x00000028
+  +0x70000  0x000080C0
+  +0x81000  0x06000000

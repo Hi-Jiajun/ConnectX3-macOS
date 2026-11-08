@@ -1,0 +1,9 @@
+
+===== environment =====
+$ echo "uname:   $(uname -a)"; echo "cmdline: $(cat /proc/cmdline)"; echo "uptime:  $(uptime)"; echo; echo "Mellanox BDF: 0000:07:00.0"
+uname:   Linux localhost 6.6.134-0-lts #1-Alpine SMP PREEMPT_DYNAMIC 2026-04-11 17:03:51 x86_64 Linux
+cmdline: BOOT_IMAGE=/boot/vmlinuz-lts modules=loop,squashfs,sd-mod,usb-storage console=tty0 iomem=relaxed
+uptime:   14:15:33 up 0 min,  0 users,  load average: 0.68, 0.16, 0.05
+
+Mellanox BDF: 0000:07:00.0
+(exit status 0)

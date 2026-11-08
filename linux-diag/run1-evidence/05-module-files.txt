@@ -1,0 +1,25 @@
+
+===== are the modules present =====
+$ find /lib/modules -name "mlx4*" 2>/dev/null; echo "---"; modinfo mlx4_core 2>&1 | head -20
+---
+filename:       /lib/modules/6.6.134-0-lts/kernel/drivers/net/ethernet/mellanox/mlx4/mlx4_core.ko
+author:         Roland Dreier
+description:    Mellanox ConnectX HCA low-level driver
+license:        Dual BSD/GPL
+parm:           internal_err_reset:Reset device on internal errors if non-zero (default 1)
+parm:           enable_qos:Enable Enhanced QoS support (default: off)
+parm:           port_type_array:Array of port types: HW_DEFAULT (0) is default 1 for IB, 2 for Ethernet
+parm:           log_mtts_per_seg:Log2 number of MTT entries per segment (0-7) (default: 0)
+parm:           use_prio:Enable steering by VLAN priority on ETH ports (deprecated)
+parm:           log_num_vlan:Log2 max number of VLANs per ETH port (0-7)
+parm:           log_num_mac:Log2 max number of MACs per ETH port (1-7)
+parm:           enable_4k_uar:Enable using 4K UAR. Should not be enabled if have VFs which do not support 4K UARs (default: false)
+parm:           enable_64b_cqe_eqe:Enable 64 byte CQEs/EQEs when the FW supports this (default: True)
+parm:           log_num_mgm_entry_size:log mgm size, that defines the num of qp per mcg, for example: 10 gives 248.range: 7 <= log_num_mgm_entry_size <= 12. To activate device managed flow steering when available, set to -1
+parm:           probe_vf:number of vfs to probe by pf driver (num_vfs > 0)
+probe_vf=port1,port2,port1+2
+parm:           num_vfs:enable #num_vfs functions if num_vfs > 0
+num_vfs=port1,port2,port1+2
+parm:           msi_x:0 - don't use MSI-X, 1 - use MSI-X, >1 - limit number of MSI-X irqs to msi_x
+parm:           debug_level:Enable debug tracing if > 0
+(exit status 0)

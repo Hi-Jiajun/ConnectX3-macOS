@@ -1,0 +1,10 @@
+
+===== kernel view of the BAR ranges =====
+$ sh -c grep -A1 -iE "0000:07:00" /proc/iomem || echo "(none)"
+        dc200000-dc2fffff : 0000:07:00.0
+        dc300000-dc3fffff : 0000:07:00.0
+      dc400000-dc4fffff : PCI Bus 0000:09
+--
+        fc02800000-fc02ffffff : 0000:07:00.0
+      fc03000000-fc030fffff : PCI Bus 0000:06
+(exit status 0)

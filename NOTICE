@@ -1,0 +1,64 @@
+Attribution and provenance
+==========================
+
+This repository is a macOS IOKit port of the FreeBSD Mellanox driver.  The
+porting base is vendored verbatim under vendor/freebsd-src/ -- 41 files, all
+carrying the dual GPL-2.0 / OpenIB.org BSD header, and those files are not
+modified.
+
+This project takes the OpenIB.org BSD branch, which permits redistribution in
+source and binary form provided the copyright notice, the list of conditions
+and the disclaimer are retained.  That is why this file exists: under the BSD
+branch, BINARY redistribution must reproduce the notices in the accompanying
+material, so a binary release without this file would not satisfy the license.
+
+Upstream copyright holders
+--------------------------
+
+The vendored files carry these notices, reproduced here as the license
+requires:
+
+    Copyright (c) 2004 Topspin Communications.  All rights reserved.
+    Copyright (c) 2004 Voltaire.  All rights reserved.
+    Copyright (c) 2005 Mellanox Technologies Ltd.  All rights reserved.
+    Copyright (c) 2005 Sun Microsystems, Inc.  All rights reserved.
+    Copyright (c) 2006, 2007 Cisco Systems, Inc.  All rights reserved.
+    Copyright (c) 2007, 2014 Mellanox Technologies Ltd.  All rights reserved.
+
+Which source files are derived
+------------------------------
+
+Derived files carry a header naming the upstream files they draw on.  The
+distinction is not a judgement call: every file below cites upstream
+file:line references in its comments, and the count is what decided it.
+
+    src/mlx4_regs.h      123 upstream references -- register offsets, opcodes,
+                         structure layouts taken from cmd.h, device.h, cq.h,
+                         qp.h, mlx4.h and the mlx4_core sources
+    src/Mlx4Hw.cpp        98 -- hardware operations modelled on mlx4_cmd.c,
+                         mlx4_eq.c, mlx4_cq.c, mlx4_mr.c, mlx4_port.c,
+                         mlx4_fw.c, mlx4_qp.c, mlx4_pd.c, mlx4_alloc.c
+    src/Mlx4Hw.h          28
+    src/mlx4_pure.h       23 -- capability decode and profile packing from
+                         mlx4_fw.c and mlx4_profile.c
+    src/cx3_abi.h         20 -- the shared ABI and its decoders, whose field
+                         offsets come from the upstream structures
+    src/Cx3Mlx4.cpp       37 -- IOKit glue, with ported logic from the same
+                         sources
+    src/Cx3Mlx4.h          4
+
+Original work in this repository, with no upstream derivation:
+
+    src/Cx3Mlx4UserClient.cpp, src/Cx3Mlx4UserClient.h
+    src/Cx3Debug.h      (boot-argument gates and the console echo; the pattern
+                         is borrowed from drivers named in its comments, but no
+                         code is)
+    src/kmod_info.cpp
+    tools/              (build scripts, the control tool, the tests)
+
+Not present, deliberately
+-------------------------
+
+No proprietary third-party binaries, no vendor kexts from any machine's driver
+backups, and no firmware: the ConnectX-3 firmware lives in the card's own
+flash.  See docs/PUBLISH-SCOPE.md, which is the authority on scope.

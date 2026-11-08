@@ -1,0 +1,5 @@
+
+===== mlx4 modules must NOT be loaded =====
+$ sh -c lsmod | grep -i mlx4 || echo "  (no mlx4 module loaded - this is what we want)"
+  (no mlx4 module loaded - this is what we want)
+(exit status 0)

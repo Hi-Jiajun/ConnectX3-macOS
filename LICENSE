@@ -1,0 +1,42 @@
+Copyright (c) 2026 Hi-Jiajun and contributors
+
+Portions of this work are derived from the FreeBSD sys/dev/mlx4 driver, which
+carries the copyright notices listed in the NOTICE file.
+
+This software is available to you under a choice of one of two licenses.  You
+may choose to be licensed under the terms of the GNU General Public License
+(GPL) Version 2, or the OpenIB.org BSD license below:
+
+    Redistribution and use in source and binary forms, with or
+    without modification, are permitted provided that the following
+    conditions are met:
+
+     - Redistributions of source code must retain the above
+       copyright notice, this list of conditions and the following
+       disclaimer.
+
+     - Redistributions in binary form must reproduce the above
+       copyright notice, this list of conditions and the following
+       disclaimer in the documentation and/or other materials
+       provided with the distribution.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+
+Which of the two licenses applies
+---------------------------------
+
+This project takes the OpenIB.org BSD branch, and every file under src/ and
+tools/ is distributed under those terms.  The GPL-2.0 branch is named above
+because the upstream files offer a choice and the text is reproduced verbatim
+so that both branches remain readable from this one file.
+
+The vendored files under vendor/freebsd-src/ each already carry their own full
+license text, unchanged, and that text governs those files.

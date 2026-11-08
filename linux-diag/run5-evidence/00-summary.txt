@@ -1,0 +1,19 @@
+
+===== environment and device =====
+$ sh -c 
+    echo "uname:   $(uname -a)"
+    echo "cmdline: $(cat /proc/cmdline)"
+    echo
+    echo "Mellanox BDF: 0000:07:00.0"
+    echo
+    echo 'driver bound to it (must be none for this test):'
+    readlink /sys/bus/pci/devices/0000:07:00.0/driver 2>/dev/null || echo '  (none - correct)'
+
+uname:   Linux localhost 6.6.134-0-lts #1-Alpine SMP PREEMPT_DYNAMIC 2026-04-11 17:03:51 x86_64 Linux
+cmdline: BOOT_IMAGE=/boot/vmlinuz-lts modules=loop,squashfs,sd-mod,usb-storage console=tty0 iomem=relaxed module_blacklist=mlx4_core,mlx4_en,mlx4_ib modprobe.blacklist=mlx4_core,mlx4_en,mlx4_ib
+
+Mellanox BDF: 0000:07:00.0
+
+driver bound to it (must be none for this test):
+  (none - correct)
+(exit status 0)

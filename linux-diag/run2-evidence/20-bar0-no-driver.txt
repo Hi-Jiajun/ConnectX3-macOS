@@ -1,0 +1,64 @@
+===== BAR0 register readback: no-driver =====
+date:      Sat Oct 10 14:15:54 UTC 2026
+BDF:       0000:07:00.0
+BAR0 base: 0x00000000dc300000
+driver:    none
+
+These are the offsets that were read from macOS.  On macOS 0x8069c
+and 0xf03fc both read 0x01000000, and whole pages at 0x6e000 and
+0x77000 read 0x01000000 repeated.  If Linux reads 0 at 0x8069c here,
+the macOS reading is an artifact of the macOS side, not the device.
+
+--- BAR0 + 0x00000   4 dword(s) ---
+  +0x00000  devmem=FAIL       resource0=FAIL      
+  +0x00004  devmem=FAIL       resource0=FAIL      
+  +0x00008  devmem=FAIL       resource0=FAIL      
+  +0x0000c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0x01000   4 dword(s) ---
+  +0x01000  devmem=FAIL       resource0=FAIL      
+  +0x01004  devmem=FAIL       resource0=FAIL      
+  +0x01008  devmem=FAIL       resource0=FAIL      
+  +0x0100c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0x40000   4 dword(s) ---
+  +0x40000  devmem=FAIL       resource0=FAIL      
+  +0x40004  devmem=FAIL       resource0=FAIL      
+  +0x40008  devmem=FAIL       resource0=FAIL      
+  +0x4000c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0x6e000   4 dword(s) ---
+  +0x6e000  devmem=FAIL       resource0=FAIL      
+  +0x6e004  devmem=FAIL       resource0=FAIL      
+  +0x6e008  devmem=FAIL       resource0=FAIL      
+  +0x6e00c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0x77000   4 dword(s) ---
+  +0x77000  devmem=FAIL       resource0=FAIL      
+  +0x77004  devmem=FAIL       resource0=FAIL      
+  +0x77008  devmem=FAIL       resource0=FAIL      
+  +0x7700c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0x80680   8 dword(s) ---
+  +0x80680  devmem=FAIL       resource0=FAIL      
+  +0x80684  devmem=FAIL       resource0=FAIL      
+  +0x80688  devmem=FAIL       resource0=FAIL      
+  +0x8068c  devmem=FAIL       resource0=FAIL      
+  +0x80690  devmem=FAIL       resource0=FAIL      
+  +0x80694  devmem=FAIL       resource0=FAIL      
+  +0x80698  devmem=FAIL       resource0=FAIL      
+  +0x8069c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0x80698   4 dword(s) ---
+  +0x80698  devmem=FAIL       resource0=FAIL      
+  +0x8069c  devmem=FAIL       resource0=FAIL      
+  +0x806a0  devmem=FAIL       resource0=FAIL      
+  +0x806a4  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0xf0000   8 dword(s) ---
+  +0xf0000  devmem=FAIL       resource0=FAIL      
+  +0xf0004  devmem=FAIL       resource0=FAIL      
+  +0xf0008  devmem=FAIL       resource0=FAIL      
+  +0xf000c  devmem=FAIL       resource0=FAIL      
+  +0xf0010  devmem=FAIL       resource0=FAIL      
+  +0xf0014  devmem=FAIL       resource0=FAIL      
+  +0xf0018  devmem=FAIL       resource0=FAIL      
+  +0xf001c  devmem=FAIL       resource0=FAIL      
+--- BAR0 + 0xf03f0   4 dword(s) ---
+  +0xf03f0  devmem=FAIL       resource0=FAIL      
+  +0xf03f4  devmem=FAIL       resource0=FAIL      
+  +0xf03f8  devmem=FAIL       resource0=FAIL      
+  +0xf03fc  devmem=FAIL       resource0=FAIL      

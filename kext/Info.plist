@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>Cx3Mlx4</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.hijiajun.driver.Cx3Mlx4</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Cx3Mlx4</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.44.48</string>
+	<key>CFBundleVersion</key>
+	<string>0.44.48</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>Cx3Mlx4</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.hijiajun.driver.Cx3Mlx4</string>
+			<key>IOClass</key>
+			<string>Cx3Mlx4</string>
+			<key>IOMatchCategory</key>
+			<string>IODefaultMatchCategory</string>
+			<key>IOPCIPrimaryMatch</key>
+			<string>0x100715b3</string>
+			<key>IOProbeScore</key>
+			<integer>90000</integer>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+		</dict>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Mellanox ConnectX-3 Pro macOS driver; hardware layer derived from FreeBSD sys/dev/mlx4 under the OpenIB.org BSD licence.</string>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<!-- Stage 10a.  The interface end of this driver is an IOEthernetController, so the
+		     networking family has to be declared here; 3.4 is the version running on this
+		     machine (docs/R4-STAGE10-PLAN.md section 2).  A kext whose dependencies cannot be
+		     resolved does not load at all, so if the driver disappears after a reboot, this is
+		     the first line to look at. -->
+		<key>com.apple.iokit.IONetworkingFamily</key>
+		<string>3.4</string>
+		<key>com.apple.iokit.IOPCIFamily</key>
+		<string>1.7</string>
+		<key>com.apple.kpi.bsd</key>
+		<string>8.10.0</string>
+		<key>com.apple.kpi.iokit</key>
+		<string>8.10.0</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>8.10.0</string>
+		<key>com.apple.kpi.mach</key>
+		<string>8.10.0</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,6 @@
+
+===== modprobe mlx4_core mlx4_en =====
+$ sh -c modprobe mlx4_core 2>&1; echo "(mlx4_core rc=$?)"; modprobe mlx4_en 2>&1; echo "(mlx4_en rc=$?)"
+(mlx4_core rc=0)
+(mlx4_en rc=0)
+(exit status 0)

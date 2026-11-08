@@ -1,0 +1,7 @@
+
+===== setpci: enable memory space and bus master =====
+$ sh -c setpci -s 07:00.0 4.w; setpci -s 07:00.0 4.w=0x0006; echo "after:"; setpci -s 07:00.0 4.w
+0000
+after:
+0006
+(exit status 0)

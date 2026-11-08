@@ -1,0 +1,7 @@
+
+===== mstflint -d <bdf> q =====
+$ mstflint -d 0000:07:00.0 q
+FATAL - crspace read (0xf0014) failed: Invalid argument
+FATAL - crspace read (0xf0014) failed: Invalid argument
+-E- Cannot open Device: 0000:07:00.0. Invalid argument. MFE_GENERAL_ERROR
+(exit status 1)

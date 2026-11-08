@@ -1,0 +1,13 @@
+
+===== dmesg errors and PCI =====
+$ dmesg 2>/dev/null | grep -iE "error|fail|unsupported|skipping|ownership|semaphore|iommu|DMAR|AMD-Vi" | tail -60
+[    0.728318] ACPI: _OSC evaluation for CPUs failed, trying _PDC
+[    0.847433] iommu: Default domain type: Translated
+[    0.847435] iommu: DMA domain TLB invalidation policy: lazy mode
+[    0.887331] pci 0000:01:00.0: VF BAR 2 [mem size 0x10000000 64bit pref]: failed to assign
+[    0.887343] pci 0000:01:00.0: VF BAR 4 [mem size 0x02000000 64bit pref]: failed to assign
+[    0.887448] pci 0000:07:00.0: VF BAR 2 [mem size 0x04000000 64bit pref]: failed to assign
+[    3.064010] hub 8-0:1.0: config failed, hub doesn't have any ports! (err -19)
+[   12.717567] r8169 0000:05:00.0: error -ENODEV: unknown chip XID 689, contact r8169 maintainers (see MAINTAINERS file)
+[   21.526276] Bluetooth: hci0: Failed to register coredump (-95)
+(exit status 0)
